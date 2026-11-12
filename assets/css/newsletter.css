@@ -1,0 +1,623 @@
+
+/* ==================================================
+   BIANCHETI ENGENHARIA
+   Newsletter Stylesheet
+
+   01. Header
+   02. Hero
+   03. Content
+   04. Filters
+   05. Search
+   06. Featured Article
+   07. Article Grid
+   08. Empty States
+   09. Pagination
+   10. Statement
+   11. Responsive
+================================================== */
+
+
+/* ==================================================
+   01. HEADER
+================================================== */
+
+.page-newsletter .inner-header {
+  padding: 2rem 0 1rem;
+  background-color: var(--color-white);
+}
+
+
+/* ==================================================
+   02. HERO
+================================================== */
+
+.newsletter-hero {
+  padding-top: clamp(5rem, 9vw, 9rem);
+  padding-bottom: clamp(4rem, 7vw, 7rem);
+
+  background-color: var(--color-white);
+}
+
+.newsletter-hero__title {
+  max-width: 1000px;
+
+  margin: 1.5rem 0 0;
+
+  font-size: clamp(3rem, 6.5vw, 6.5rem);
+  font-weight: 800;
+
+  line-height: 1.07;
+  letter-spacing: -0.065em;
+}
+
+.newsletter-hero__title span {
+  display: block;
+  color: var(--color-gray-500);
+}
+
+.newsletter-hero__description {
+  max-width: 350px;
+  margin-bottom: 0;
+
+  color: var(--color-gray-700);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+
+/* ==================================================
+   03. CONTENT
+================================================== */
+
+.newsletter-content {
+  background-color: var(--color-gray-50);
+}
+
+.newsletter-content__header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.newsletter-content__header h2 {
+  margin-bottom: 0;
+}
+
+.newsletter-content__header p {
+  max-width: 330px;
+  margin-bottom: 0;
+
+  color: var(--color-gray-600);
+  line-height: 1.8;
+}
+
+
+/* ==================================================
+   04. FILTERS
+================================================== */
+
+.newsletter-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 1.5rem;
+
+  padding: 1.5rem 0;
+  margin-bottom: 3.5rem;
+
+  border-top: 1px solid var(--color-gray-300);
+  border-bottom: 1px solid var(--color-gray-300);
+}
+
+.newsletter-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 0.5rem;
+}
+
+.newsletter-filter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+  padding: 0.65rem 1.2rem;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-800);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  transition:
+    background-color var(--transition-normal),
+    border-color var(--transition-normal),
+    color var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+.newsletter-filter:hover {
+  background-color: var(--color-gray-200);
+  transform: translateY(-2px);
+}
+
+.newsletter-filter.is-active {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.newsletter-filter.is-active:hover {
+  background-color: var(--color-gray-800);
+}
+
+
+/* ==================================================
+   05. SEARCH
+================================================== */
+
+.newsletter-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: min(100%, 300px);
+}
+
+.newsletter-search svg {
+  position: absolute;
+  left: 1rem;
+
+  width: 18px;
+  height: 18px;
+
+  color: var(--color-gray-600);
+  pointer-events: none;
+}
+
+.newsletter-search input {
+  width: 100%;
+  min-height: 44px;
+
+  padding: 0.7rem 1rem 0.7rem 2.75rem;
+
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-pill);
+
+  color: var(--color-black);
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+
+  outline: none;
+
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.newsletter-search input::placeholder {
+  color: var(--color-gray-500);
+}
+
+.newsletter-search input:focus {
+  border-color: var(--color-black);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ==================================================
+   06. FEATURED ARTICLE
+================================================== */
+
+.newsletter-featured {
+  margin-bottom: 4.5rem;
+}
+
+.featured-article {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+
+  min-height: 430px;
+
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+
+  overflow: hidden;
+}
+
+.featured-article__image {
+  display: block;
+  min-height: 430px;
+
+  background-color: var(--color-gray-200);
+  overflow: hidden;
+}
+
+.featured-article__image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  filter: grayscale(100%);
+
+  transition:
+    transform 700ms ease,
+    filter 700ms ease;
+}
+
+.featured-article:hover .featured-article__image img {
+  transform: scale(1.045);
+  filter: grayscale(25%);
+}
+
+.featured-article__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: clamp(2rem, 4vw, 4rem);
+}
+
+.featured-article__eyebrow {
+  margin-bottom: 1.5rem;
+
+  color: var(--color-gray-600);
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.featured-article__title {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 1.2;
+}
+
+.featured-article__excerpt {
+  margin-bottom: 2rem;
+
+  color: var(--color-gray-700);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+
+/* ==================================================
+   07. ARTICLE GRID
+================================================== */
+
+.newsletter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 3rem 2rem;
+}
+
+.newsletter-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  height: 100%;
+}
+
+.newsletter-card__image {
+  display: block;
+  aspect-ratio: 4 / 3;
+
+  margin-bottom: 1.5rem;
+
+  background-color: var(--color-gray-200);
+  overflow: hidden;
+}
+
+.newsletter-card__image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  filter: grayscale(100%);
+
+  transition:
+    transform 600ms ease,
+    filter 600ms ease;
+}
+
+.newsletter-card:hover .newsletter-card__image img {
+  transform: scale(1.06);
+  filter: grayscale(25%);
+}
+
+.newsletter-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  margin-bottom: 0.9rem;
+
+  color: var(--color-gray-600);
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.newsletter-card__title {
+  margin-bottom: 1rem;
+
+  font-size: clamp(1.35rem, 1.8vw, 1.75rem);
+  line-height: 1.3;
+}
+
+.newsletter-card__title a {
+  transition: color var(--transition-normal);
+}
+
+.newsletter-card__title a:hover {
+  color: var(--color-gray-600);
+}
+
+.newsletter-card__excerpt {
+  margin-bottom: 1.5rem;
+
+  color: var(--color-gray-700);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.newsletter-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  width: fit-content;
+  margin-top: auto;
+  padding-bottom: 0.35rem;
+
+  border-bottom: 1px solid currentColor;
+
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  transition: gap var(--transition-normal);
+}
+
+.newsletter-card__link:hover {
+  gap: 1.1rem;
+}
+
+
+/* ==================================================
+   08. EMPTY STATES
+================================================== */
+
+.newsletter-status {
+  grid-column: 1 / -1;
+
+  padding: 2rem;
+
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+
+  color: var(--color-gray-600);
+  font-size: 0.95rem;
+}
+
+.newsletter-empty {
+  padding: 5rem 2rem;
+
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
+
+  text-align: center;
+}
+
+.newsletter-empty[hidden] {
+  display: none;
+}
+
+.newsletter-empty__icon {
+  margin-bottom: 1rem;
+
+  color: var(--color-gray-400);
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.newsletter-empty h3 {
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+}
+
+.newsletter-empty p {
+  max-width: 420px;
+  margin: 0 auto 2rem;
+
+  color: var(--color-gray-600);
+}
+
+.newsletter-empty .button {
+  margin-inline: auto;
+}
+
+
+/* ==================================================
+   09. PAGINATION
+================================================== */
+
+.newsletter-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-gray-300);
+}
+
+.newsletter-results {
+  margin: 0;
+
+  color: var(--color-gray-600);
+  font-size: 0.875rem;
+}
+
+.newsletter-pagination .button[hidden] {
+  display: none;
+}
+
+
+/* ==================================================
+   10. STATEMENT
+================================================== */
+
+.newsletter-statement {
+  background-color: var(--color-white);
+}
+
+.newsletter-statement h2 {
+  max-width: 950px;
+  margin: 0 auto;
+
+  font-size: clamp(2.3rem, 5vw, 4.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.05em;
+}
+
+.newsletter-statement h2 span {
+  display: block;
+
+  margin-top: 0.15em;
+  color: var(--color-gray-500);
+}
+
+
+/* ==================================================
+   11. RESPONSIVE
+================================================== */
+
+@media (max-width: 1199.98px) {
+
+  .newsletter-toolbar {
+    align-items: flex-start;
+  }
+
+  .newsletter-search {
+    width: 100%;
+    max-width: 350px;
+  }
+
+}
+
+
+@media (max-width: 991.98px) {
+
+  .newsletter-content__header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .featured-article {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-article__image {
+    min-height: 320px;
+    max-height: 450px;
+  }
+
+  .newsletter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 767.98px) {
+
+  .newsletter-hero {
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .newsletter-hero__title {
+    font-size: clamp(2.7rem, 10vw, 4.5rem);
+  }
+
+  .newsletter-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .newsletter-search {
+    max-width: 100%;
+  }
+
+  .newsletter-filters {
+    gap: 0.5rem;
+  }
+
+  .newsletter-filter {
+    font-size: 0.75rem;
+  }
+
+  .featured-article__image {
+    min-height: 240px;
+  }
+
+  .featured-article__content {
+    padding: 2rem 1.5rem;
+  }
+
+  .newsletter-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .newsletter-pagination {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+}
+
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .newsletter-filter,
+  .featured-article__image img,
+  .newsletter-card__image img,
+  .newsletter-card__link {
+    transition: none !important;
+  }
+
+  .newsletter-filter:hover,
+  .featured-article:hover .featured-article__image img,
+  .newsletter-card:hover .newsletter-card__image img {
+    transform: none;
+  }
+
+}

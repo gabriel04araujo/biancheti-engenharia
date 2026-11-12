@@ -1,0 +1,7 @@
+Sempre que adicionar novas publicações a newsletter
+executar dois comandos para atualizar SEO
+
+no terminal:
+
+py scripts/build_articles.py
+py scripts/build_sitemap.py

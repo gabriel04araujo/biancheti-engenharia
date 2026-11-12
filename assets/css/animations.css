@@ -1,0 +1,192 @@
+
+/* ==================================================
+   BIANCHETI ENGENHARIA
+   Animations Stylesheet
+
+   01. Animation tokens
+   02. Scroll reveal
+   03. Hero animations
+   04. Geometric animations
+   05. Microinteractions
+   06. Accessibility
+================================================== */
+
+
+/* ==================================================
+   01. ANIMATION TOKENS
+================================================== */
+
+:root {
+  --animation-duration: 800ms;
+  --animation-distance: 35px;
+  --animation-easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ==================================================
+   02. SCROLL REVEAL
+================================================== */
+
+.js-animations [data-reveal] {
+  opacity: 0;
+
+  transform: translateY(var(--animation-distance));
+
+  transition:
+    opacity var(--animation-duration) var(--animation-easing),
+    transform var(--animation-duration) var(--animation-easing);
+}
+
+.js-animations [data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Elementos em foco continuam acessíveis */
+
+.js-animations [data-reveal]:focus-within {
+  opacity: 1;
+  transform: none;
+}
+
+
+
+/* ==================================================
+   03. HERO ANIMATIONS
+================================================== */
+
+/* Entrada suave da identidade */
+
+@keyframes brandEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Linha decorativa do hero */
+
+@keyframes lineExpand {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/*
+  A animação de entrada dos conteúdos
+  do hero será controlada pelo reveal.
+*/
+
+.hero__footer {
+  transform-origin: left;
+}
+
+
+/* ==================================================
+   04. GEOMETRIC ANIMATIONS
+================================================== */
+
+/* Rotação muito lenta dos círculos */
+
+@keyframes geometricRotation {
+  from {
+    transform: rotate(-20deg);
+  }
+
+  to {
+    transform: rotate(340deg);
+  }
+}
+
+.hero__shape {
+  animation: geometricRotation 90s linear infinite;
+}
+
+/* Movimento sutil do fundo */
+
+@keyframes gridMovement {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 80px 80px;
+  }
+}
+
+.hero__grid {
+  animation: gridMovement 35s linear infinite;
+}
+
+
+/* ==================================================
+   05. MICROINTERACTIONS
+================================================== */
+
+/* Links com movimentação suave */
+
+.text-link span,
+.site-nav__cta span {
+  transition: transform var(--transition-normal);
+}
+
+.text-link:hover span {
+  transform: translate(3px, -3px);
+}
+
+.site-nav__cta:hover span {
+  transform: translate(3px, -3px);
+}
+
+/* Leve destaque em imagens */
+
+.services-feature__visual,
+.journal-card__image {
+  isolation: isolate;
+}
+
+/* Animação de sublinhado */
+
+@keyframes underlineDraw {
+  from {
+    background-size: 0 1px;
+  }
+
+  to {
+    background-size: 100% 1px;
+  }
+}
+
+
+/* ==================================================
+   06. ACCESSIBILITY
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .js-animations [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero__shape,
+  .hero__grid {
+    animation: none !important;
+  }
+
+  .text-link span,
+  .site-nav__cta span {
+    transition: none !important;
+  }
+
+}

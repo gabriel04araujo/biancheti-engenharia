@@ -1,0 +1,47 @@
+
+{
+  "posts": [
+    {
+      "id": "regularizacao-imobiliaria",
+      "title": "O que você precisa saber antes de regularizar um imóvel?",
+      "excerpt": "Entenda os primeiros passos da regularização imobiliária e a importância de conhecer a situação documental do seu imóvel.",
+      "category": "regularizacao",
+      "categoryLabel": "Regularização",
+      "date": "2026-11-12",
+      "author": "Biancheti Engenharia",
+      "image": "assets/images/newsletter/regularizacao.webp",
+      "imageAlt": "Documentos e projetos técnicos relacionados à regularização imobiliária",
+      "featured": true,
+      "readingTime": 5,
+      "content": "content/posts/regularizacao-imobiliaria.md"
+    },
+    {
+      "id": "importancia-projeto-engenharia",
+      "title": "Por que um projeto de engenharia é tão importante?",
+      "excerpt": "Conheça a importância do planejamento técnico para a segurança e a organização de uma construção.",
+      "category": "engenharia",
+      "categoryLabel": "Engenharia",
+      "date": "2026-11-10",
+      "author": "Biancheti Engenharia",
+      "image": "assets/images/newsletter/projeto-engenharia.webp",
+      "imageAlt": "Plantas e desenhos técnicos de engenharia civil",
+      "featured": false,
+      "readingTime": 4,
+      "content": "content/posts/importancia-projeto-engenharia.md"
+    },
+    {
+      "id": "mercado-imobiliario",
+      "title": "O mercado imobiliário e o desenvolvimento das cidades",
+      "excerpt": "Uma reflexão sobre como a engenharia, o planejamento urbano e os investimentos contribuem para o desenvolvimento regional.",
+      "category": "mercado",
+      "categoryLabel": "Mercado imobiliário",
+      "date": "2026-11-08",
+      "author": "Biancheti Engenharia",
+      "image": "assets/images/newsletter/mercado-imobiliario.webp",
+      "imageAlt": "Edifícios e paisagem urbana contemporânea",
+      "featured": false,
+      "readingTime": 6,
+      "content": "content/posts/mercado-imobiliario.md"
+    }
+  ]
+}

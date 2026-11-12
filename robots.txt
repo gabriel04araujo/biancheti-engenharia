@@ -1,0 +1,11 @@
+
+# ==========================================
+# BIANCHETI ENGENHARIA
+# robots.txt
+# ==========================================
+
+User-agent: *
+Allow: /
+
+# Mapa do site
+Sitemap: https://biancheti.com.br/sitemap.xml
